@@ -7,9 +7,9 @@ const userScehma = new schema({
         required: true,
         unique: true,
         trim: true,
-        minlength: 3
-    },
-    timestamps: true
+        minlength: 3,
+        timestamps: true
+    }
 });
 
 const User = mongoose.model('User', userScehma);

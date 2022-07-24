@@ -21,8 +21,16 @@ async function connect(){
 
 connect();
 
-app.listen(8000, () =>{
-    console.log("Server started on port 8000.");
+//Import the files from the routes folder.
+const exerciseRouter = require('./routes/exercises');
+const userRouter = require('./routes/users');
+
+//If a user enters '/exercises' or '/users' in the URL it will load everything from the file.
+app.use('/exercises', exerciseRouter);
+app.use('/users', userRouter);
+
+app.listen(3000, () =>{
+    console.log("Server started on port 3000.");
 });
 
 /*app.use(cors());
